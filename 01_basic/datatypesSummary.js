@@ -29,3 +29,5 @@ let myObj = {
 let myFunction = function() {
     console.log("hi");
 }
+
+//----------------------- Memory ------------------------
