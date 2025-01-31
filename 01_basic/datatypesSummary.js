@@ -31,3 +31,33 @@ let myFunction = function() {
 }
 
 //----------------------- Memory ------------------------
+
+// stack memory (stack memory are use in primitive type of datatype), Heap memory (heap memory are use in Non-Primitive Datatype).
+
+// ----------- Stack memory
+// when the allocate the string value in myWork and anotherMyWork allocate the myWork value. then copy the value
+// when we change the copy dataype value there will not change in original value.
+let myWork = "Raj";
+let anotherMyWork = myWork;
+anotherMyWork = "welcome";
+console.log(myWork);
+console.log(anotherMyWork);
+
+// ----------------- Heap memory
+// In heap memory value is like a reference when we change the value in another object
+// then reference value will change.
+
+
+let user1 = {
+    email: "keshri124",
+    upi: "user@qrl"
+}
+
+let user2 = user1;
+user2.email = "raj123";
+
+console.log(user1.email);
+console.log(user2.email);
+
+
+
