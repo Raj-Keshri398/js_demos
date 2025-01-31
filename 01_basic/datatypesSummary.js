@@ -37,6 +37,7 @@ let myFunction = function() {
 // ----------- Stack memory
 // when the allocate the string value in myWork and anotherMyWork allocate the myWork value. then copy the value
 // when we change the copy dataype value there will not change in original value.
+// when we keep the value in stack memory then copy the value. original value won't be change.
 let myWork = "Raj";
 let anotherMyWork = myWork;
 anotherMyWork = "welcome";
@@ -46,7 +47,7 @@ console.log(anotherMyWork);
 // ----------------- Heap memory
 // In heap memory value is like a reference when we change the value in another object
 // then reference value will change.
-
+//when we keep the value in heap memory then refrence the value. original value will change here.
 
 let user1 = {
     email: "keshri124",
