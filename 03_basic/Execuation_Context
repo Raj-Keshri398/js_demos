@@ -1,0 +1,54 @@
+// javascript Execuation Context
+
+// {} -> 1. Global Execution Context = keep the global ec in this, in browser the value of this is window object
+//       2. Function Execution Context
+//       3. Eval Execution Context
+
+// {} js code run two phases 
+// 1. Memory Creation phase =  In memory creation phase use for Variables or any type of Declaration allocate the place.
+// 2. Execution Phase = In execuation phase use for Add, Subtract or any type of calculaton.
+
+
+// Example :-  
+
+            // let val1 = 10;
+            // let val2 = 5;
+            // function addNum(num1, num2){
+            //     let total = num1 + num2;
+            //     return total;
+            // }
+            // let result1 = addNum(val1, val2);
+            // let result2 = addNum(10, 2);
+
+
+            // explain the steps of code
+            // 1. global Exection with this
+            // 2. Memory Creation Execution
+            //      . val1 = undefined
+            //      . val2 = undefined
+            //      . addNum = defination
+            //      . result1 = undefined
+            //      . result2 = undefined
+            // 3. Execution phase
+            //      . val1 = 10
+            //      . val2 = 5
+            //      . addNum = New variable Enviroment + Execcution thread
+            //         .  Memeory Phase : 
+                            // val1 = undefined
+                            // val2 = undefined
+                            // result1 = undefined
+                            // result2 = undefined 
+            //      . result1 = 15
+            //      . result2 
+
+            //         . Execuation :
+                        //     num1 = 10
+                        //     num2 = 5
+                        //     total = 15 
+            // when the execution is done they are  return gloabl execuation after that temp memory will be deleted.
+
+
+            // call stack it is work like lifo method
+
+
+
