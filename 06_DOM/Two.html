@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    // access the parent div using document.querySelector
+    const parents = document.querySelector('.parent');
+    //console.log(parents);
+    //console.log(parents.children[0].innerHTML);
+
+    //------------------------------------------------------------
+    //using loop to print all div element inside the parent div
+    for (let i = 0; i < parents.children.length; i++) {
+        console.log(parents.children[i].innerHTML);
+    }
+
+    //---------------------------------------------
+    // we can easily access or change the div content
+    parents.children[1].style.color = "orange";
+
+    //-------------------------------------------------
+    // we can access or manuplate the firstElementChild or lastElementChlid 
+    // and access the first and last value easily.
+    // console.log(parents.firstElementChild);
+    // console.log(parents.lastElementChild);
+    
+    //----------------------------------------------------
+    // access child div using querySelector
+    const dayone = document.querySelector('.day');
+    console.log(dayone);
+    // access the child div to parent div using parentElement.
+    console.log(dayone.parentElement);
+    // we can easily access next Element/div after the Element/div
+    console.log(dayone.nextElementSibling);
+
+    // from parents element to all child element js count all break in text
+    // next line in text
+    // because after parent element next line js make text
+    console.log("NODES: ", parents.childNodes);
+    
+    
+    
+</script>
+</html>

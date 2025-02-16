@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM learing</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <!-- DOM is a documnet object model -->
+        <!-- Select any ID and Class using getElementByID() or getElementBYClassName()-->
+
+        <!-- when i write id name title.textContent then show whole content value even show display none value too -->
+        <!-- when we write id name title.innertext then show only that value which is visible on the screen-->
+        <!-- when we write id name title.innerHTML then show whole content which is inside the <h1> tag -->
+        <h1 id="title" class="heading">Dom Learing here<span style=" display: none">For test</span></h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <!-- when we use document.querySelector('h2') it will only select first h2 tag-->
+         <!-- we can also use to select ID and Class too. document.querySelector('#title') or document.querySelector('.title')-->
+         <!-- when we use document.querySelectorAll('h2') it will select whole h2 tag which is exist in page.-->
+        <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </h2>
+        <h2>At excepturi voluptatum quibusdam tempore earum, alias mollitia, eligendi </h2>
+        <h2>voluptatibus aut hic, culpa ipsum quasi. Voluptas vero odit ducimus quod, quisquam doloribus.</h2>
+
+        <!-- document.querySelector()-->
+        <!-- if we color only first element of ul is then 
+             step 1: documet.querySelector('ul')
+             step 2: const myUnorderedList = document.querySelector('ul'), store the ul in a variable
+             step 3: const turnGreen = document.querySelector('li'), store the li in a variable
+             step 4: use style query, turnGreen.style.backgroundColor = "green"-->
+
+        <!-- document.querySelectorAll()-->
+        <!-- using of document.querySelectorAll('li') it will select all li tag but we can only manuplate
+          the tag using nodelist example: 
+          step 1: const myliList = document.querySelectorAll('li')
+          step 2: myliList[0].style.backgroundColor = 'green' it will turn only one li tag green -->
+
+        <!-- using forEach loop using document.querySelectorAll()
+         Example: 
+         myliList.forEach(function (list) {
+            list.style.backgroundColor = 'green'  
+            })-->
+        <ul>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">one</li>
+            <li class="list-item">Four</li>
+        </ul>
+        <!-- if we select the whole li by const tempclass = document.getElementByClass(.item-list) 
+         then we can't manuplate indivisually we can convert the class element into Array
+         using step 1 : const myArray = Array.from(tempClass)
+         step 2: myArray.forEach(function (list) {
+                    list.style.backgroundColor = "green"
+                })-->
+    </div>
+</body>
+</html>

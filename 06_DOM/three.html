@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    
+</body>
+<script>
+    //Creating div Element inside the script and  attach to the document.
+    // step 1 creating a div
+    const div = document.createElement('div')
+    console.log(div);
+    // step 2 define class 
+    div.className = "main";
+    // define id 
+    div.id = Math.random(Math.random() * 10000000 + 2);
+    div.setAttribute("title", "Generate title");
+    // manuplate the background color 
+    div.style.backgroundColor = "green"
+    //div.innerText = "Hello World"
+
+    // set innertext using createTextNode
+    const addText = document.createTextNode("Welcome");
+    div.appendChild(addText)
+
+    // last append/attach that div in documnet file.
+    document.body.appendChild(div);
+
+    // we can create an empty array and numerious of div element
+
+    const DivElements = [];
+
+    for (let i = 1; i < 5; i++) {
+        const divs = document.createElement('div');
+        divs.className = "same";
+        divs.style.padding = "10px";
+        divs.style.backgroundColor = "blue";
+        divs.style.margin = "5px";
+        divs.style.color = "white";
+        divs.innerText = "hello";
+
+        // Append each div to the document body
+        document.body.appendChild(divs);
+        console.log(divs);
+        // after creating the div Element push all the div inside the empty array
+        DivElements.push(divs);
+    }
+
+     // access and manuplate the whole div
+    DivElements.forEach(function (list) {
+        list.style.backgroundColor = "green";
+    })
+
+    // access the particular div using array index value. 
+    DivElements[1].style.backgroundColor = "red";
+
+
+</script>
+</html>

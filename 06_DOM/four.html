@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM FOUR VIDEO</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // add li inside the unorderlist ul using function and appendchild method
+    function addLanguage(langName){
+        const Lists = document.createElement('li');
+        Lists.innerHTML = `${langName}`;
+        document.querySelector('.language').appendChild(Lists)
+    }
+    addLanguage("python")
+
+    // add li inside the ul optimize way
+    function addOptimizeLanguage(langName) {
+        const li = document.createElement('li');
+        const AddText = document.createTextNode(langName);
+        li.appendChild(AddText);
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptimizeLanguage("java")
+    //---------------------------------------------------
+    // Editing the Elements
+    // select the li without using array method 
+    // using li:nth-child(2) it will select second li inside the ul 
+    const secondlang = document.querySelector("li:nth-child(2)");
+    secondlang.style.color = "red";
+    //secondlang.innerHTML = "ReactJs"
+    const NewLi = document.createElement('li');
+    NewLi.textContent = "Mojo";
+    secondlang.replaceWith(NewLi)
+    NewLi.style.color = "red"
+
+    //------------------------------------------
+    //remove
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove();
+</script>
+</html>
