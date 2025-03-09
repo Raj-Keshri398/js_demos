@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    //this approach is out dated.....
+    // document.getElementById('owl').onclick = function() {
+    //     alert("owl");
+    // }
+
+    // =======================current approach using addEventListener============================ 
+
+    /* The addEventListener() method in JavaScript is used to attach an event handler to an HTML element. 
+    It allows you to define how the element should respond to specific events like clicks, mouse movements,
+     keypresses, etc. */
+
+    // =============================Must be study this topic=====================================
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // when i write the true then it follow the capturing rule
+    // capturing rule is base of concept up to down so when we click the owl image
+    // the first print Clicked inside the ul then print clicked owl
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("Clicked inside the ul");
+    // }, true)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("Clicked Owl");
+    // }, true)
+    
+
+    // when i write the false then it follow the bubbling rule
+    // bubbling rule is base of concept down to up so when we click the owl image
+    // the first print owl clicked then print Clicked inside the ul
+
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("Clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("Clicked Owl");
+    //     e.stopPropagation(); // stopPropagation is stop the bubbling 
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click', function(e) {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("Google clicked");
+    // }, false)
+    
+
+    document.querySelector('#images').addEventListener('click', function(e) {
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            
+            let removeIt = e.target.parentNode;
+            removeIt.remove()
+        }
+        
+        // Two method to remove li (means ul child)
+
+        // first method
+        //removeIt.remove()
+        // second method
+        //removeIt.parentNode.removeChild(removeIt);
+
+    })
+</script>
+</html>
